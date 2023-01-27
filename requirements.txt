@@ -1,0 +1,8 @@
+robotframework==5.0.1
+robotframework-seleniumlibrary==6.0.0
+robotframework-faker==5.0.0
+robotframework-pabot==2.7.0
+robotframework-robocop==2.6.0
+robotframework-requests==0.9.4
+robotframework-debug==3.0.1
+ipython==8.7.0

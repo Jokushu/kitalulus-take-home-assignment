@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.6 on darwin)" generated="20230127 01:11:01.195" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Upload Download" source="/Users/vincentgunawan/Documents/kitalulus/take-home-assignment/tests/test_upload_download.robot">
+<test id="s1-t1" name="Verify File Download" line="26">
+<kw name="Open Chrome Browser" library="resources" type="SETUP">
+<arg>${HOST}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${web_browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230127 01:11:01.381" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
+<status status="PASS" starttime="20230127 01:11:01.381" endtime="20230127 01:11:08.986"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230127 01:11:08.987" endtime="20230127 01:11:09.478"/>
+</kw>
+<status status="PASS" starttime="20230127 01:11:01.380" endtime="20230127 01:11:09.479"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elements_card_path}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230127 01:11:09.479" endtime="20230127 01:11:09.527"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elements_card_path}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230127 01:11:09.528" level="INFO">Clicking element 'xpath=(//div[@class='card mt-4 top-card'])[1]'.</msg>
+<status status="PASS" starttime="20230127 01:11:09.528" endtime="20230127 01:11:09.656"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://demoqa.com/elements</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20230127 01:11:09.663" level="INFO">Current location is 'https://demoqa.com/elements'.</msg>
+<status status="PASS" starttime="20230127 01:11:09.657" endtime="20230127 01:11:09.664"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${up_down_path}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230127 01:11:09.664" endtime="20230127 01:11:10.712"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230127 01:11:10.713" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230127 01:11:10.712" endtime="20230127 01:11:10.722"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${up_down_path}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230127 01:11:10.723" level="INFO">Clicking element 'xpath=//span[.='Upload and Download']'.</msg>
+<status status="PASS" starttime="20230127 01:11:10.722" endtime="20230127 01:11:10.786"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://demoqa.com/upload-download</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20230127 01:11:10.794" level="INFO">Current location is 'https://demoqa.com/upload-download'.</msg>
+<status status="PASS" starttime="20230127 01:11:10.786" endtime="20230127 01:11:10.794"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:downloadButton</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230127 01:11:10.795" endtime="20230127 01:11:10.813"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>id:downloadButton</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230127 01:11:10.814" level="INFO">Clicking link 'id:downloadButton'.</msg>
+<status status="PASS" starttime="20230127 01:11:10.813" endtime="20230127 01:11:10.870"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230127 01:11:15.872" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230127 01:11:10.871" endtime="20230127 01:11:15.872"/>
+</kw>
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${files}</var>
+<arg>/Users/vincentgunawan/Downloads/test_download</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20230127 01:11:15.874" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/vincentgunawan/Downloads/test_download"&gt;/Users/vincentgunawan/Downloads/test_download&lt;/a&gt;'.</msg>
+<msg timestamp="20230127 01:11:15.876" level="INFO">1 file:
+.DS_Store</msg>
+<msg timestamp="20230127 01:11:15.877" level="INFO">${files} = ['.DS_Store']</msg>
+<status status="PASS" starttime="20230127 01:11:15.873" endtime="20230127 01:11:15.877"/>
+</kw>
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${files}</arg>
+<arg>1</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20230127 01:11:15.879" level="INFO">Length is 1</msg>
+<status status="PASS" starttime="20230127 01:11:15.878" endtime="20230127 01:11:15.880"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230127 01:11:15.881" endtime="20230127 01:11:15.978"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230127 01:11:15.979" endtime="20230127 01:11:15.979"/>
+</kw>
+<status status="PASS" starttime="20230127 01:11:01.379" endtime="20230127 01:11:15.980"/>
+</test>
+<doc>This is to test ToolsQA logo
+Testing logo from qademo</doc>
+<status status="PASS" starttime="20230127 01:11:01.200" endtime="20230127 01:11:15.982"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Upload Download">Test Upload Download</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

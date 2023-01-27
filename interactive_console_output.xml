@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.6 on darwin)" generated="20230126 23:12:25.551" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="/Users/vincentgunawan/.vscode/extensions/robocorp.robotframework-lsp-1.8.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230126 23:12:26.459" level="INFO">${chrome options} = &lt;selenium.webdriver.chrome.options.Options object at 0x108488e80&gt;</msg>
+<status status="PASS" starttime="20230126 23:12:26.378" endtime="20230126 23:12:26.459"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${prefs}</var>
+<arg>download.default_directory=/Users/alapan/PycharmProjects/Robot-Framework/Resources/Download</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230126 23:12:26.460" level="INFO">${prefs} = {'download.default_directory': '/Users/alapan/PycharmProjects/Robot-Framework/Resources/Download'}</msg>
+<status status="PASS" starttime="20230126 23:12:26.459" endtime="20230126 23:12:26.460"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20230126 23:12:26.460" endtime="20230126 23:12:26.461"/>
+</kw>
+<kw name="Create Webdriver">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome options}</arg>
+<msg timestamp="20230126 23:12:26.464" level="FAIL">No keyword with name 'Create Webdriver' found.</msg>
+<status status="FAIL" starttime="20230126 23:12:26.463" endtime="20230126 23:12:26.464"/>
+</kw>
+<kw name="Goto">
+<arg>https://the-internet.herokuapp.com/download</arg>
+<status status="NOT RUN" starttime="20230126 23:12:26.465" endtime="20230126 23:12:26.465"/>
+</kw>
+<kw name="Click Link">
+<arg>css:[href="download/sunset.jpg"]</arg>
+<status status="NOT RUN" starttime="20230126 23:12:26.467" endtime="20230126 23:12:26.467"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230126 23:12:26.467" endtime="20230126 23:12:26.467"/>
+</kw>
+<kw name="List Files In Directory">
+<var>${files}</var>
+<arg>/Users/alapan/PycharmProjects/Robot-Framework/Resources/Download</arg>
+<status status="NOT RUN" starttime="20230126 23:12:26.468" endtime="20230126 23:12:26.468"/>
+</kw>
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${files}</arg>
+<arg>1</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="NOT RUN" starttime="20230126 23:12:26.468" endtime="20230126 23:12:26.468"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" starttime="20230126 23:12:26.470" endtime="20230126 23:12:26.470"/>
+</kw>
+<status status="PASS" starttime="20230126 23:12:25.579" endtime="20230126 23:12:29.537"/>
+</kw>
+<status status="PASS" starttime="20230126 23:12:25.578" endtime="20230126 23:12:29.538"/>
+</test>
+<status status="PASS" starttime="20230126 23:12:25.553" endtime="20230126 23:12:29.539"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
